@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+    * 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+    * 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。示例：
+    * 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+    * 输出：7 -> 0 -> 8
+    * 原因：342 + 465 = 807
+    * */
+    let addTwoNumbers = function(l1, l2) {
+        let str1 = "";
+        let str2 = "";
+        let str3;
+        let getArray = [];
+        for (let i = l1.length - 1; i >= 0; i--) {
+            str1 = str1 + l1[i]
+        }
+        for (let i = l2.length - 1; i >= 0; i--) {
+            str2 = str2 + l2[i]
+        }
+        str1 = Number(str1);
+        str2 = Number(str2);
+        str3 = String(str1+str2);
+        for (let i = str3.length - 1; i >=0; i--) {
+            getArray.push(str3[i]);
+        }
+        console.log(getArray)
+    };
+    addTwoNumbers([2,4,3],[5,6,4]);
+    addTwoNumbers([1,4,3],[1,6,4,7]);
+</script>
+</body>
+</html>
